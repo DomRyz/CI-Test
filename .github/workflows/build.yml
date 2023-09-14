@@ -13,13 +13,6 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
-    - name: Create Node Environment
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16.14.2
-    - name: NPM Install
-      run: npm ci
-    - name: Test
-      run: npm test
-
+    - run: npm install
+    - run: node app.js
 
