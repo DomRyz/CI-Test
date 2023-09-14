@@ -1,5 +1,9 @@
-name: Build Test.jg web application
-on: pull_request
+name: Build App
+
+on: 
+  pull_request:
+  push:
+    branches: [development]
     
 
 jobs:
@@ -11,6 +15,8 @@ jobs:
       uses: actions/checktout@v4
     - name: Create Node Environment
       uses: actions/setup-node@v3
+      with:
+        node-version: 16.14.2
     - name: Install Packages and Build Application
       run: |
         npm install -g @vue/cli yarn
