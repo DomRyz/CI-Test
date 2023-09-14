@@ -5,7 +5,7 @@ on:
   push:
     branches: [development]
 
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +27,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
+          file: D:\2023 Tri 2\CI-Test-1\art-gallery-frontend\Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
